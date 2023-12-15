@@ -1,6 +1,6 @@
-# Hire Quotient Backens
+# Hire Quotient Backend
 
-Deployed on heroku : local
+Deployed on Cyclic : https://nice-jade-bear-hose.cyclic.app/
 
 ## Table of Contents
 
@@ -19,31 +19,26 @@ Deployed on heroku : local
 
 ### Register User
 
-````http
+```http
 POST /api/v1/user/register
 
 ## Request Body :
 
 ### Request Body:
 
-```javascript
 {
   "name": "John Doe",
   "email": "john@example.com",
   "phone": 1234567890,
   "password": "your_password"
 }
-```
 
 ## Response :
 
-### Response
-
-```javascript
 {
 "message": "User created successfully"
 }
+
+
+
 ```
-
-
-````
