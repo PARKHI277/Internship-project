@@ -87,7 +87,7 @@ Params - id(user id)
 Request Body
 {
   "oldPassword":"abc@1234",
-  "newPassword":"abcd@12345
+  "newPassword":"abcd@12345"
 }
 
 Response :
