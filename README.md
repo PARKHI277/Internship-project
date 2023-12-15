@@ -3,6 +3,7 @@
 Brief project description.
 
 ## Table of Contents
+
 - [User API](#user-api)
   - [Register User](#register-user)
   - [Login User](#login-user)
@@ -18,21 +19,31 @@ Brief project description.
 
 ### Register User
 
-```http
+````http
 POST /api/v1/user/register
 
-## Request Body
+Request Body :
+
+## Request Body:
+
+```javascript
 {
   "name": "John Doe",
   "email": "john@example.com",
   "phone": 1234567890,
   "password": "your_password"
 }
+```
 
-## Response 
+Response :
 
+## Response
+
+```javascript
 {
-  "message": "User created successfully"
+"message": "User created successfully"
 }
+```
 
 
+````
