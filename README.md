@@ -22,7 +22,7 @@ Deployed on Cyclic : https://nice-jade-bear-hose.cyclic.app/
 ```http
 POST /api/v1/user/register
 
-Request Body 
+Request Body
 
 {
   "name": "John Doe",
@@ -39,4 +39,22 @@ Response :
 
 
 
+```
+
+### Login User
+
+```http
+POST /api/v1/user/login
+
+Request Body
+{
+   "email": "john@example.com",
+  "password": "your_password"
+}
+
+Response :
+
+{
+"message": "logged in successfully"
+}
 ```
