@@ -108,8 +108,7 @@ const logoutUser = async (req, res) => {
   try {
     const user = await User.findOne({ refreshToken });
     if (user) {
-      user.refreshToken = null;
-      await user.save();
+      await User.updateOne({ _id: user._id }, { $set: { refreshToken: null } });
     }
     res.json({ message: "Logout successful" });
   } catch (error) {
