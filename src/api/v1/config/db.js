@@ -1,12 +1,10 @@
 const mongoose = require("mongoose");
-mongoose
-  .connect(
-    "mongodb+srv://admin_parkhi:Parkhi123@cluster0.ycvd3.mongodb.net/hire",
 
-    {
-      useNewUrlParser: true,
-    }
-  )
+
+mongoose
+  .connect(process.env.DB_URL, {
+    useNewUrlParser: true,
+  })
   .then(() => {
     console.log("Data base is connected successfully");
   })
