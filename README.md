@@ -114,7 +114,7 @@ Response :
 }
 ```
 
-### Update User By id
+### Update User By Id
 
 ```http
 PUT /api/v1/user/:id
@@ -124,7 +124,7 @@ Response :
 }
 ```
 
-### Delete User By id
+### Delete User By Id
 
 ```http
 DELETE /api/v1/user/:id
