@@ -178,12 +178,16 @@ const getUserById = async (req, res) => {
 
 const resSetPassword = async (req, res) => {
   try {
+    const userId = req.params.id;
+
     const { oldPassword, newPassword } = req.body;
-    //   const authHeader = req.headers.authorization || req.headers.Authorization;
-    //   const token = authHeader.replace("Bearer ", "");
-    //   const decoded = jwt.verify(token, "vikram");
-    const decodedJWT = jwt.verify(token, "process.env.Secret_key");
-    const userId = decodedJWT.userId;
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    // Check if the new password matches the regex pattern
+    if (!passwordRegex.test(newPassword)) {
+      return res.status(400).json({ error: "Invalid new password format" });
+    }
 
     const user = await User.findById(userId);
 
@@ -201,7 +205,7 @@ const resSetPassword = async (req, res) => {
     const hashedPassword = await bcrypt.hash(newPassword, salt);
     let newHashedPassword = hashedPassword;
 
-    await modelMap[role].findByIdAndUpdate(userId, {
+    await User.findByIdAndUpdate(userId, {
       password: newHashedPassword,
     });
 
