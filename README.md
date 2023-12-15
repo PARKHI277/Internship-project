@@ -2,8 +2,6 @@
 
 Deployed on heroku : local
 
-
-
 ## Table of Contents
 
 - [User API](#user-api)
@@ -24,9 +22,9 @@ Deployed on heroku : local
 ````http
 POST /api/v1/user/register
 
-Request Body :
+## Request Body :
 
-## Request Body:
+### Request Body:
 
 ```javascript
 {
@@ -37,9 +35,9 @@ Request Body :
 }
 ```
 
-Response :
+## Response :
 
-## Response
+### Response
 
 ```javascript
 {
