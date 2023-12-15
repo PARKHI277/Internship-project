@@ -1,5 +1,7 @@
 # Hire Quotient Backend
 
+Documentation Link : https://documenter.getpostman.com/view/19171310/2s9Ykkg3xF
+
 Deployed on Cyclic : https://nice-jade-bear-hose.cyclic.app/
 
 ## Table of Contents
@@ -100,7 +102,17 @@ Response :
 GET /api/v1/user/all
 Response :
 {
-
+  "users": [
+    {
+      "_id": "657bf1df2cca85a67330fa48",
+      "name": "Parkhi",
+      "email": "parkhi89@gmail.com",
+      "phone": 7668011605,
+      "password": "$2b$10$Yqlpi92d8IIV2q151vGBd.2ZbBpSuJS66vAwhkC4Esb3TAFUXYzee",
+      "__v": 0,
+      "refreshToken": null
+    }
+  ]
 }
 ```
 
@@ -110,7 +122,15 @@ Response :
 GET /api/v1/user/:id
 Response :
 {
-
+  "user": {
+    "_id": "657ca8788c6a008ce3ab2ba2",
+    "name": "Parkhi",
+    "email": "parkhi@gmail.com",
+    "phone": 7668011905,
+    "password": "$2b$10$fQwZMCoIfhe7To/kXopGgOLbumHiOMz.pk13becrNnpJVRSBTmCZ2",
+    "__v": 0,
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTdjYTg3ODhjNmEwMDhjZTNhYjJiYTIiLCJpYXQiOjE3MDI2Njg0Njd9.EMsxJHTpzjXIcNbJEej8tzxAmem-efveVi1Vl6vv9uE"
+  }
 }
 ```
 
@@ -120,7 +140,16 @@ Response :
 PUT /api/v1/user/:id
 Response :
 {
-
+  "message": "User updated successfully",
+  "user": {
+    "_id": "657bf1df2cca85a67330fa48",
+    "name": "Parkhi",
+    "email": "parkhig@gmail.com",
+    "phone": 7668011605,
+    "password": "$2b$10$Yqlpi92d8IIV2q151vGBd.2ZbBpSuJS66vAwhkC4Esb3TAFUXYzee",
+    "__v": 0,
+    "refreshToken": null
+  }
 }
 ```
 
@@ -130,7 +159,16 @@ Response :
 DELETE /api/v1/user/:id
 Response :
 {
-
+  "message": "User deleted successfully",
+  "user": {
+    "_id": "657ca8788c6a008ce3ab2ba2",
+    "name": "Parkhi",
+    "email": "parkhi@gmail.com",
+    "phone": 7668011905,
+    "password": "$2b$10$fQwZMCoIfhe7To/kXopGgOLbumHiOMz.pk13becrNnpJVRSBTmCZ2",
+    "__v": 0,
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTdjYTg3ODhjNmEwMDhjZTNhYjJiYTIiLCJpYXQiOjE3MDI2Njg0Njd9.EMsxJHTpzjXIcNbJEej8tzxAmem-efveVi1Vl6vv9uE"
+  }
 }
 ```
 
@@ -144,8 +182,7 @@ Request Body
   "refreshToken":"etertyuiopyrutiyouprytuiodytfaughfuuyaoutaiyoupoi"
 }
 
-Response :
 {
-
+  "message": "Logout successful"
 }
 ```
