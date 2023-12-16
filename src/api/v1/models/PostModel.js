@@ -8,7 +8,10 @@ const PostSchema = new mongoose.Schema({
     required: true,
   },
   content: "string",
-  timestamp: "timestamp",
+  timestamp: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const Post = mongoose.model("Post", PostSchema);

@@ -13,7 +13,10 @@ const CommentSchema = new mongoose.Schema({
     required: true,
   },
   content: "string",
-  timestamp: "timestamp",
+  timestamp: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const Comment = mongoose.model("Comment", CommentSchema);

@@ -12,7 +12,6 @@ const {
 } = require("../controller/UserController");
 const { isUserAuthorized } = require("../middleware/auth.middleware");
 const Router = express.Router();
-const User = require("../models/UserModel");
 
 /*
     METHOD : POST

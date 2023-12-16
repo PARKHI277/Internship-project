@@ -6,6 +6,8 @@ require("./src/api/v1/config/db");
 const helmet = require("helmet");
 
 const UserRoutes = require("./src/api/v1/routes/UserRoute");
+const PostRoutes = require("./src/api/v1/routes/PostRoutes");
+const CommentRoutes = require("./src/api/v1/routes/CommentRoutes");
 
 app.use(express.json());
 app.use(helmet());
@@ -21,6 +23,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/user", UserRoutes);
+app.use("/api/v1/post", PostRoutes);
+app.use("/api/v1/comment", CommentRoutes);
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
