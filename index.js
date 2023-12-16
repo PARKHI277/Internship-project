@@ -3,10 +3,12 @@ const cors = require("cors");
 const app = express();
 require("dotenv").config();
 require("./src/api/v1/config/db");
+const helmet = require("helmet");
 
 const UserRoutes = require("./src/api/v1/routes/UserRoute");
 
 app.use(express.json());
+app.use(helmet());
 app.use(
   cors({
     origin: "*",
