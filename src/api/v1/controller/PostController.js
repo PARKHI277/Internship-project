@@ -7,6 +7,8 @@ const { default: mongoose } = require("mongoose");
 const createPost = async (req, res) => {
   try {
     const { content } = req.body;
+
+    // getting user_is using middleware
     const user_id = req.user.userId;
 
     const post = new Post({
@@ -32,8 +34,5 @@ const getAllPosts = async (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
-
-
-
 
 module.exports = { createPost, getAllPosts };

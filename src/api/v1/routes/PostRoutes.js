@@ -16,5 +16,5 @@ Router.post("/", isUserAuthorized, createPost);
     DESCRIPTION: Get all posts
 **/
 
-Router.get("/", isUserAuthorized, getAllPosts);
+Router.get("/", getAllPosts);
 module.exports = Router;

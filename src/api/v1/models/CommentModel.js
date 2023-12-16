@@ -12,7 +12,7 @@ const CommentSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
-  content: "string",
+  content: { type: "string", required: true },
   timestamp: {
     type: Date,
     default: Date.now,
