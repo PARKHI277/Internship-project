@@ -84,6 +84,10 @@ Response :
 GET /api/v1/user/reset-password/:id
 
 Params - id(user id)
+Header
+{
+"Authorization" : jwt token in Bearer format
+}
 Request Body
 {
   "oldPassword":"abc@1234",
@@ -100,6 +104,10 @@ Response :
 
 ```http
 GET /api/v1/user/all
+Header
+{
+"Authorization" : jwt token in Bearer format
+}
 Response :
 {
   "users": [
@@ -120,6 +128,10 @@ Response :
 
 ```http
 GET /api/v1/user/:id
+Header
+{
+"Authorization" : jwt token in Bearer format
+}
 Response :
 {
   "user": {
@@ -138,6 +150,10 @@ Response :
 
 ```http
 PUT /api/v1/user/:id
+Header
+{
+"Authorization" : jwt token in Bearer format
+}
 Response :
 {
   "message": "User updated successfully",
@@ -157,6 +173,10 @@ Response :
 
 ```http
 DELETE /api/v1/user/:id
+Header
+{
+"Authorization" : jwt token in Bearer format
+}
 Response :
 {
   "message": "User deleted successfully",
@@ -176,7 +196,10 @@ Response :
 
 ```http
 POST /api/v1/user/logout
-
+Header
+{
+"Authorization" : jwt token in Bearer format
+}
 Request Body
 {
   "refreshToken":"etertyuiopyrutiyouprytuiodytfaughfuuyaoutaiyoupoi"
@@ -185,4 +208,109 @@ Request Body
 {
   "message": "Logout successful"
 }
+```
+
+### Post By User
+
+```http
+POST /api/v1/post
+
+Header
+{
+  "Authorization" : jwt token in Bearer format
+}
+Request Body
+{
+  "content":"test post"
+}
+Response:
+{
+  "user_id": "657d205b4d241d1aa3f1d751",
+  "content": "test",
+  "_id": "657d2192242196f01b93046b",
+  "timestamp": "2023-12-16T04:03:30.102Z",
+  "__v": 0
+}
+```
+
+### Get All Posts
+
+```http
+GET /api/v1/post
+Response:
+[
+  {
+    "_id": "657d2192242196f01b93046b",
+    "user_id": "657d205b4d241d1aa3f1d751",
+    "content": "test",
+    "timestamp": "2023-12-16T04:03:30.102Z",
+    "__v": 0
+  },
+  {
+    "_id": "657d2192242196f01b93046b",
+    "user_id": "657d205b4d241d1aa3f1d751",
+    "content": "test",
+    "timestamp": "2023-12-16T04:03:30.102Z",
+    "__v": 0
+  },
+  {
+    "_id": "657d2192242196f01b93046b",
+    "user_id": "657d205b4d241d1aa3f1d751",
+    "content": "test",
+    "timestamp": "2023-12-16T04:03:30.102Z",
+    "__v": 0
+  }
+]
+```
+
+### Comment on any post by user
+
+```http
+POST /api/v1/comment
+
+Header
+{
+  "Authorization" : jwt token in Bearer format
+}
+Query
+{
+  post_id
+}
+Request Body
+{
+  "content":"test comment"
+}
+Response:
+{
+  "post_id": "657d2192242196f01b93046b",
+  "user_id": "657d205b4d241d1aa3f1d751",
+  "content": "good",
+  "_id": "657d23a3dc08cfaedc7694e6",
+  "timestamp": "2023-12-16T04:12:19.845Z",
+  "__v": 0
+}
+```
+
+### Get all comments on particular post
+
+```http
+GET /api/v1/comment/posts/:post_id
+params - post_id
+Response:
+[
+  {
+    "_id": "657d2192242196f01b93046b",
+    "user_id": "657d205b4d241d1aa3f1d751",
+    "content": "test",
+    "timestamp": "2023-12-16T04:03:30.102Z",
+    "__v": 0
+  },
+  {
+    "_id": "657d2192242196f01b93046b",
+    "user_id": "657d205b4d241d1aa3f1d751",
+    "content": "test",
+    "timestamp": "2023-12-16T04:03:30.102Z",
+    "__v": 0
+  }
+]
 ```

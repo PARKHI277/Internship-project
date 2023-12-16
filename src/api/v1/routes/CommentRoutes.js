@@ -9,10 +9,9 @@ const commentController = require("../controller/CommentController");
     query : post_id(post_id)
     DESCRIPTION: comment on post
 **/
-Router.post("/comments", isUserAuthorized, commentController.createComment);
+Router.post("/", isUserAuthorized, commentController.createComment);
 
 /*
-    METHOD : GET
     METHOD : GET
     params : post_id
     DESCRIPTION: Get comments on particular post 
