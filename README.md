@@ -16,6 +16,10 @@ Deployed on Cyclic : https://nice-jade-bear-hose.cyclic.app/
   - [Update User by ID](#update-user-by-id)
   - [Delete User by ID](#delete-user-by-id)
   - [Logout User](#logout-user)
+  - [Post By User](#Post By User)
+  - [Get All Posts](#Get All Posts)
+  - [Comment on any post by user](#Comment on any post by user)
+  - [Get all comments on particular post](#Get all comments on particular post)
 
 ## User API
 
