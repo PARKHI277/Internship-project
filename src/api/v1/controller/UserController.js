@@ -44,11 +44,12 @@ const LoginUser = async (req, res) => {
       return res.status(401).json({ error: "Invalid credentials" });
     }
 
+    const accessTokenExpiry = process.env.ACCESS_TOKEN_EXPIRY || "20m";
     const accessToken = jwt.sign(
       { userId: user._id },
       "process.env.Secret_Key",
       {
-        expiresIn: "15m",
+        expiresIn: accessTokenExpiry,
       }
     );
 
@@ -85,11 +86,12 @@ const getRefreshToken = async (req, res) => {
     jwt.verify(refreshToken, "refresh_secret_key", (err, user) => {
       if (err) return res.status(403).json({ error: "Invalid refresh token" });
 
+      const accessTokenExpiry = process.env.ACCESS_TOKEN_EXPIRY || "20m";
       const accessToken = jwt.sign(
         { userId: user._id },
         "process.env.Secret_Key",
         {
-          expiresIn: "15m",
+          expiresIn: accessTokenExpiry,
         }
       );
       res.json({ accessToken });
